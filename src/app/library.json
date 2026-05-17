@@ -1,0 +1,14 @@
+{
+  "Books": [
+    {
+      "title": "dhcdbcdhcbd",
+      "author": "cdchdbc",
+      "category": "dbjdb",
+      "isbn": "hbdhcdcbdcdhb",
+      "quantity": "ckckkscsjcs",
+      "publishedDate": "13271984",
+      "id": "qFkz8noSmRM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

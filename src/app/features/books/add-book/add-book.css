@@ -1,0 +1,45 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: auto;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-control {
+  width: auto !important;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 16px; /* Space between fields */
+}
+
+.input-container .mb-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+button[type='submit'] {
+  display: block;
+  margin: 20px auto 0; /* Centers the button horizontally */
+  padding: 8px 16px; /* Adjusts the size of the button */
+  font-size: 1em; /* Sets a readable font size */
+  background-color: #6c48b9f5; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
