@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { Layout } from './layout/layout/layout';
+import { Layout } from './layout';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'layout',
     component: Layout,
-    children: [],
   },
 ];
