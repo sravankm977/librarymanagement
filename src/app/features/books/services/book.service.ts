@@ -16,11 +16,15 @@ export class BookService {
     return this.http.post<Book[]>('http://localhost:3000/Books', newBook);
   }
 
-  deleteBook() {
-    return this.http.delete('http://localhost:3000/Books?id');
+  deleteBook(deleteBook: Book) {
+    return this.http.delete('http://localhost:3000/Books?${deleteBook.id}');
   }
 
-  updateBook() {
-    return this.http.put('http://localhost:3000/Books?id', {});
+  updateBook(updateBook: Book) {
+    return this.http.put(`http://localhost:3000/Books/${updateBook.id}`, updateBook);
+  }
+
+  patchBook(patchBook: Book) {
+    return this.http.patch(`http://localhost:3000/Books?id=${patchBook.id}`, patchBook);
   }
 }
