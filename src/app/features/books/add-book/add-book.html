@@ -1,1 +1,90 @@
-<p>add-book works!</p>
+<h1>
+  Add Book
+</h1>
+<p>please fill the form and submit to add a new book to the library</p>
+
+
+<form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+  <div class="input-container">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+      @if(addBookForm.get('title')?.invalid && addBookForm.get('title')?.touched) {
+        <div class="error">
+          @if(addBookForm.get('title')?.hasError('required')) {
+            Title is required.
+          }
+          </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" class="form-control" id="author" formControlName="author">
+      @if(addBookForm.get('author')?.invalid && addBookForm.get('author')?.touched) {
+        <div class="error">
+          @if(addBookForm.get('author')?.hasError('required')) {
+            Author is required.
+          }
+          </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input type="text" class="form-control" id="category" formControlName="category">
+    </div>
+
+    <div class="mb-3">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input type="email" class="form-control" id="isbn" formControlName="isbn">
+      @if(addBookForm.get('isbn')?.invalid && addBookForm.get('isbn')?.touched) {
+        <div class="error">
+          @if(addBookForm.get('isbn')?.hasError('required')) {
+            ISBN is required.
+          }
+          </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="email" class="form-control" id="quantity" formControlName="quantity">
+    </div>
+
+    <div class="mb-3">
+      <label for="publishedDate" class="form-label">Published Date</label>
+      <input type="email" class="form-control" id="publishedDate" formControlName="publishedDate">
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Category</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(book of booksData$ | async; track book.id) {
+    <tr>
+      <th scope="row">{{book.id}}</th>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.quantity}}</td>
+      <td>{{book.publishedDate | date:'shortDate'}}</td>
+    </tr>
+    }
+  </tbody>

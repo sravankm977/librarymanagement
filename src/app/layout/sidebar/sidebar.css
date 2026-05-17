@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the navbar horizontally */
+  background-color: #f8f9fa; /* Light background color */
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.navbar ul {
+  list-style: none; /* Removes bullet points */
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 15px; /* Adds spacing between buttons */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.navbar a {
+  text-decoration: none; /* Removes underline */
+  padding: 10px 20px; /* Adds padding for button-like appearance */
+  background-color: #6c48b9f5;
+  color: #d3d3d5;
+  border-radius: 4px; /* Rounds the corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  border-radius: 20px;
+}
+
+.navbar a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
