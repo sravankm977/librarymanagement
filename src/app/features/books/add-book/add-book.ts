@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 import { Book } from '../book-list/models/books.interface';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { BookService } from '../book-list/services/book.service';
 
 @Component({
   selector: 'app-add-book',
   imports: [ReactiveFormsModule, AsyncPipe, DatePipe],
+  providers: [BookService],
   templateUrl: './add-book.html',
   styleUrl: './add-book.css',
 })
@@ -21,7 +23,11 @@ export class AddBook {
   addBookForm!: FormGroup;
   booksData$!: Observable<Book[]>;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private bookService: BookService
+  ) {}
 
   ngOnInit() {
     this.initializeBookForm();
@@ -40,7 +46,7 @@ export class AddBook {
   }
 
   loadBooks() {
-    this.booksData$ = this.http.get<Book[]>('http://localhost:3000/Books');
+    this.booksData$ = this.bookService.getBooks();
 
     console.log(
       'Books data loaded:',
@@ -53,10 +59,11 @@ export class AddBook {
       console.error('Form is invalid. Please correct the errors and try again.');
     } else if (this.addBookForm.valid) {
       const newBook: Book = this.addBookForm.value;
-      this.http.post<Book[]>('http://localhost:3000/Books', newBook).subscribe(
+      this.bookService.addBook(newBook).subscribe(
         (response) => {
           console.log('Book added successfully:', response);
           this.loadBooks(); // Refresh the book list after adding a new book
+          this.addBookForm.reset(); // Reset the form after successful submission
         },
         (error) => {
           console.error('Error adding book:', error);
