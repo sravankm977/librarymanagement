@@ -58,33 +58,41 @@
     </div>
   </div>
 
-
-  <button type="submit" class="btn btn-primary">Submit</button>
+  @if(this.mode === 'add') {
+    <button type="submit" class="btn btn-primary">Submit</button>
+  } @else if(this.mode === 'edit') {
+    <button type="submit" class="btn btn-primary">Update</button>
+  }
 </form>
 
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th> -->
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Category</th>
-      <th scope="col">ISBN</th>
+      <!-- <th scope="col">ISBN</th> -->
       <th scope="col">Quantity</th>
-      <th scope="col">Published Date</th>
+      <!-- <th scope="col">Published Date</th> -->
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     @for(book of booksData$ | async; track book.id) {
     <tr>
-      <th scope="row">{{book.id}}</th>
+      <!-- <th scope="row">{{book.id}}</th> -->
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
       <td>{{book.category}}</td>
-      <td>{{book.isbn}}</td>
+      <!-- <td>{{book.isbn}}</td> -->
       <td>{{book.quantity}}</td>
-      <td>{{book.publishedDate | date:'shortDate'}}</td>
+      <!-- <td>{{book.publishedDate | date:'shortDate'}}</td> -->
+      <td>
+        <img src="assets/pencil.png" alt="edit" class="action-icon" (click)="onEditBook(book)">
+        <img src="assets/delete.png" alt="edit" class="action-icon" (click)="onDeleteBook(book)">
+      </td>
     </tr>
     }
   </tbody>

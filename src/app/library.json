@@ -1,13 +1,13 @@
 {
   "Books": [
     {
+      "id": "yIUHsg_zw_g",
       "title": "Clean Code",
       "author": "Robert C. Martin",
       "category": "Programming",
       "isbn": "9780132350884",
-      "quantity": "12",
-      "publishedDate": "2008-08-01",
-      "id": "yIUHsg_zw_g"
+      "quantity": "13",
+      "publishedDate": "2008-08-01"
     },
     {
       "title": "The Pragmatic Programmer",
@@ -53,6 +53,15 @@
       "quantity": "15",
       "publishedDate": "2022-12-11",
       "id": "T3bPgr75miA"
+    },
+    {
+      "title": "Rich",
+      "author": "Andrew",
+      "category": "Finance",
+      "isbn": "978059035345",
+      "quantity": "8",
+      "publishedDate": "2021-12-23",
+      "id": "XHsyYoh-GZ0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
