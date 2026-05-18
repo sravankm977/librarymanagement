@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Book } from '../../models/books.interface';
 import { HttpClient } from '@angular/common/http';
@@ -15,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
-  imports: [ReactiveFormsModule, AsyncPipe, DatePipe],
+  imports: [ReactiveFormsModule, AsyncPipe],
   providers: [BookService],
   templateUrl: './add-book.html',
   styleUrl: './add-book.css',
@@ -75,7 +69,19 @@ export class AddBook {
     this.addBookForm.patchValue(book);
   }
 
-  onDeleteBook(book: Book) {}
+  onDeleteBook(book: Book) {
+    if (confirm('Are you sure you want to delete this book?')) {
+      this.bookService.deleteBook(book).subscribe(
+        () => {
+          this.router.navigate(['/books/add']);
+          this.loadBooks(); // Reload books after successful deletion
+        },
+        (error) => {
+          console.error('Error deleting book:', error);
+        }
+      );
+    }
+  }
 
   onSubmit() {
     if (!this.addBookForm.valid) {

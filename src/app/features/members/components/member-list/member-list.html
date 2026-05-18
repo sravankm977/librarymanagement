@@ -1,0 +1,54 @@
+<h1>Members</h1>
+<p>please fill the form and submit to add to our registry</p>
+
+<form [formGroup]="memberForm" (ngSubmit)="Submit()">
+  <div class="input-container">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" />
+    </div>
+
+    <div class="mb-3">
+      <label for="membershipDate" class="form-label">Membership Date</label>
+      <input type="text" class="form-control" id="membershipDate" formControlName="membershipDate" />
+    </div>
+  </div>
+
+  @if(mode === 'add') {
+    <button type="submit" class="btn btn-primary">Add</button>
+  } @else if(mode === 'edit') {
+    <div class="button-container">
+      <!-- <button type="reset" class="btn btn-primary">Cancel</button> -->
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+  }
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Membership Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(member of membersData$ | async; track member?.id) {
+      <tr>
+        <td>{{ member?.name }}</td>
+        <td>{{ member?.email }}</td>
+        <td>{{ member?.membershipDate | date:'shortDate'}}</td>
+        <td>
+          <img src="assets/pencil.png" alt="edit" class="action-icon" (click)="onEdit(member)" />
+          <img src="assets/delete.png" alt="delete" class="action-icon" (click)="onDelete(member)" />
+        </td>
+      </tr>
+    }
+  </tbody>
