@@ -53,15 +53,38 @@
       "quantity": "15",
       "publishedDate": "2022-12-11",
       "id": "T3bPgr75miA"
+    }
+  ],
+  "Members": [
+    {
+      "id": "pjjGWx_QcGc",
+      "name": "John Smith",
+      "email": "john.smith@gmail.com",
+      "membershipDate": "2024-01-15"
     },
     {
-      "title": "Rich",
-      "author": "Andrew",
-      "category": "Finance",
-      "isbn": "978059035345",
-      "quantity": "8",
-      "publishedDate": "2021-12-23",
-      "id": "XHsyYoh-GZ0"
+      "id": "0AG6x4Rwp7E",
+      "name": "Emily Johnson",
+      "email": "emily.johnson@yahoo.com",
+      "membershipDate": "2023-11-20"
+    },
+    {
+      "id": "6ropeKZGybg",
+      "name": "Michael Brown",
+      "email": "michael.brown@outlook.com",
+      "membershipDate": "2024-03-05"
+    },
+    {
+      "id": "z9JcCLrzd1M",
+      "name": "Sophia Williams",
+      "email": "sophia.williams@gmail.com",
+      "membershipDate": "2022-09-12"
+    },
+    {
+      "id": "6N1q8TZVC6c",
+      "name": "Daniel Miller",
+      "email": "daniel.miller@hotmail.com",
+      "membershipDate": "2023-06-18"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
