@@ -6,7 +6,7 @@
       "author": "Robert C. Martin",
       "category": "Programming",
       "isbn": "9780132350884",
-      "quantity": "13",
+      "quantity": 6,
       "publishedDate": "2008-08-01"
     },
     {
@@ -14,7 +14,7 @@
       "author": "Andrew Hunt",
       "category": "Programming",
       "isbn": "9780201616224",
-      "quantity": "8",
+      "quantity": 5,
       "publishedDate": "1999-10-30",
       "id": "GNWbhx08xec"
     },
@@ -41,7 +41,7 @@
       "author": "J.K. Rowling",
       "category": "Fantasy",
       "isbn": "9780590353427",
-      "quantity": "20",
+      "quantity": 18,
       "publishedDate": "1997-06-26",
       "id": "elN0AKy_vRw"
     },
@@ -52,16 +52,7 @@
       "isbn": "9780590353",
       "quantity": "0",
       "publishedDate": "1997-06-26",
-      "id": "elN0AKyw"
-    },
-    {
-      "title": "Sorcerer's Stone",
-      "author": "Row",
-      "category": "Fantasy",
-      "isbn": "9780590353",
-      "quantity": "2",
-      "publishedDate": "1997-06-26",
-      "id": "elN0AKyw"
+      "id": "elN0AKyw_jjajbjb"
     }
   ],
   "Members": [
@@ -100,6 +91,26 @@
       "name": "xe",
       "email": "edede",
       "membershipDate": "2022-12-28"
+    }
+  ],
+  "borrows": [
+    {
+      "bookId": "yIUHsg_zw_g",
+      "bookTitle": "Clean Code",
+      "memberId": "0AG6x4Rwp7E",
+      "memberName": "Emily Johnson",
+      "borrowDate": "",
+      "returnDate": "",
+      "id": "dazrV4fFMjA"
+    },
+    {
+      "bookId": "GNWbhx08xec",
+      "bookTitle": "The Pragmatic Programmer",
+      "memberId": "0AG6x4Rwp7E",
+      "memberName": "Emily Johnson",
+      "borrowDate": "2026-05-19",
+      "returnDate": "",
+      "id": "CYpFHnSUWho"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: center; /* Centers the navbar horizontally */
-  background-color: #f8f9fa; /* Light background color */
+  background-color: gainsboro; /* Light background color */
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
@@ -29,5 +29,6 @@
 }
 
 .navbar a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: coral; /* Darker blue on hover */
+  color: black; /* Changes text color on hover */
 }
