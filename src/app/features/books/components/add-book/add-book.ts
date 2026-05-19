@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { combineLatest, map, Observable, startWith } from 'rxjs';
 import { Book } from '../../models/books.interface';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe } from '@angular/common';
@@ -16,9 +22,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AddBook {
   addBookForm!: FormGroup;
-  booksData$!: Observable<Book[]>;
   mode = 'add';
-
   book = {
     id: '',
     title: '',
@@ -28,6 +32,9 @@ export class AddBook {
     quantity: '',
     publishedDate: '',
   };
+  booksData$!: Observable<Book[]>;
+  filteredBooks$!: Observable<Book[]>;
+  searchControl = new FormControl('');
 
   constructor(
     private fb: FormBuilder,
@@ -56,10 +63,26 @@ export class AddBook {
 
   loadBooks() {
     this.booksData$ = this.bookService.getBooks();
+    this.setupFilter();
+  }
 
-    console.log(
-      'Books data loaded:',
-      this.booksData$.subscribe((data) => console.log(data))
+  setupFilter() {
+    const search$ = this.searchControl.valueChanges.pipe(startWith(''));
+
+    // combineLatest is used to combine two observables: the list of books and the search query.
+    // Whenever either of these changes, the map function will be triggered to filter the books based on the search query.
+    this.filteredBooks$ = combineLatest([this.booksData$, search$]).pipe(
+      map(([books, query]) => {
+        const q = (query ?? '').toLowerCase().trim();
+        if (!q) return books; // empty query → show all
+
+        return books.filter(
+          (book) =>
+            book.title?.toLowerCase().includes(q) ||
+            book.author?.toLowerCase().includes(q) ||
+            book.category?.toLowerCase().includes(q)
+        );
+      })
     );
   }
 
@@ -73,7 +96,6 @@ export class AddBook {
     if (confirm('Are you sure you want to delete this book?')) {
       this.bookService.deleteBook(book).subscribe(
         () => {
-          this.router.navigate(['/books/add']);
           this.loadBooks(); // Reload books after successful deletion
         },
         (error) => {

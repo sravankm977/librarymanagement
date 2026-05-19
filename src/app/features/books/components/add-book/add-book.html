@@ -65,6 +65,15 @@
   }
 </form>
 
+<div class="mb-3 mt-4">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search by title, author or category..."
+    [formControl]="searchControl"
+  />
+</div>
+
 
 <table class="table">
   <thead>
@@ -80,7 +89,7 @@
     </tr>
   </thead>
   <tbody>
-    @for(book of booksData$ | async; track book?.id) {
+    @for(book of filteredBooks$ | async; track book?.id) {
     <tr>
       <!-- <th scope="row">{{book.id}}</th> -->
       <td>{{book?.title}}</td>
