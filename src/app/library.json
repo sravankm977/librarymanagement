@@ -46,13 +46,22 @@
       "id": "elN0AKy_vRw"
     },
     {
-      "title": "Harry Potter",
-      "author": "Robert",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "Rowling",
       "category": "Fantasy",
-      "isbn": "9780590353423",
-      "quantity": "15",
-      "publishedDate": "2022-12-11",
-      "id": "T3bPgr75miA"
+      "isbn": "9780590353",
+      "quantity": "0",
+      "publishedDate": "1997-06-26",
+      "id": "elN0AKyw"
+    },
+    {
+      "title": "Sorcerer's Stone",
+      "author": "Row",
+      "category": "Fantasy",
+      "isbn": "9780590353",
+      "quantity": "2",
+      "publishedDate": "1997-06-26",
+      "id": "elN0AKyw"
     }
   ],
   "Members": [
@@ -85,6 +94,12 @@
       "name": "Daniel Miller",
       "email": "daniel.miller@hotmail.com",
       "membershipDate": "2023-06-18"
+    },
+    {
+      "id": "GRp-rVmC3hM",
+      "name": "xe",
+      "email": "edede",
+      "membershipDate": "2022-12-28"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
