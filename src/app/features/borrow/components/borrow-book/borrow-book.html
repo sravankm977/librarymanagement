@@ -1,0 +1,119 @@
+<form [formGroup]="borrowBookForm" (ngSubmit)="submit()">
+
+  @if(successMessage) {
+    <div class="alert alert-success">{{ successMessage }}</div>
+  }
+  @if(errorMessage) {
+    <div class="alert alert-danger">{{ errorMessage }}</div>
+  }
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="book">Book</label>
+
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ selectedBook?.title || 'Select Book' }}
+        </button>
+
+        <ul class="dropdown-menu">
+          @for(book of booksData$ | async; track book.id) {
+          <li>
+            <button type="button" class="dropdown-item" (click)="onSelectBook(book)" [disabled]="book.quantity === 0">
+              {{ book.title }} ({{ book.quantity }} left)
+              @if(book.quantity === 0) {
+                <span class="text-muted">
+                  (Unavailable)
+                </span>
+              }
+            </button>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Hidden input to bind the selected book title to the form -->
+      <input type="hidden" formControlName="bookId" />
+    </div>
+
+    <div class="form-group">
+      <label for="member">Member:</label>
+
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ selectedMember?.name || 'Select Member' }}
+        </button>
+
+        <ul class="dropdown-menu">
+          @for(member of membersData$ | async; track member.id) {
+          <li>
+            <button type="button" class="dropdown-item" (click)="onSelectMember(member)">
+              {{ member.name }}
+            </button>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Hidden input to bind the selected book title to the form -->
+      <input type="hidden" formControlName="memberId" />
+    </div>
+  </div>
+
+  <div class="button-container">
+    <!-- ✅ Single Borrow button — disabled when form is invalid -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="borrowBookForm.invalid"
+    >
+      Borrow
+    </button>
+
+    <button type="submit" class="btn btn-primary">
+      Return
+    </button>
+  </div>
+</form>
+
+<!-- BORROWED BOOKS TABLE -->
+<div class="mt-4">
+  <h5>Borrowed Books</h5>
+
+  @if(borrows.length === 0) {
+    <p class="text-muted">No borrowed books yet.</p>
+  } @else {
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Book</th>
+          <th>Member</th>
+          <th>Borrow Date</th>
+          <th>Return Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(borrow of borrows; track borrow.id; let i = $index) {
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ borrow.bookTitle }}</td>
+            <td>{{ borrow.memberName }}</td>
+            <td>{{ borrow.borrowDate }}</td>
+            <td>{{ borrow.returnDate }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

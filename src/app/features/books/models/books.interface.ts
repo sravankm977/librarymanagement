@@ -4,6 +4,6 @@ export interface Book {
   author: string;
   category: string;
   isbn: string;
-  quantity: string;
+  quantity: number;
   publishedDate: string;
 }

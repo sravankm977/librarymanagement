@@ -1,15 +1,29 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-.html {
-  height: 100%;
-  padding: 20px;
+html,
+body {
+  height: 100%; /* Ensure the body takes the full height of the viewport */
+  margin: 0; /* Remove default margins */
+  padding: 2px 5px;
+  background-color: #f8f9fa;
 }
 
-body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Stack header, main, and footer vertically */
+  min-height: 100vh; /* Ensure the wrapper takes the full height of the viewport */
+}
+
+main {
+  flex: 1; /* Push the footer to the bottom by taking up available space */
+  border: 1px solid #dee2e6; /* Add a border to the main content area */
+  padding: 5px 10px;
+  background-color: cadetblue;
+}
+
+app-footer {
+  text-align: center; /* Center the footer content */
+  padding: 10px 0; /* Add some padding */
 }
 
 img {
@@ -21,6 +35,13 @@ img {
   cursor: pointer;
 }
 
+.title-container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 10px; /* Space between the icon and the title */
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -28,6 +49,8 @@ form {
   max-width: auto;
   margin: auto;
   padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
 .form-control {
@@ -54,7 +77,7 @@ form {
 button[type='submit'] {
   display: block;
   margin: 20px auto 0; /* Centers the button horizontally */
-  padding: 8px 16px; /* Adjusts the size of the button */
+  padding: 4px 16px; /* Adjusts the size of the button */
   font-size: 1em; /* Sets a readable font size */
   background-color: #6c48b9f5; /* Bootstrap primary color */
   color: white;
@@ -64,7 +87,24 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: coral; /* Darker shade for hover effect */
+  color: black; /* Change text color on hover */
+}
+
+button[type='button']:disabled {
+  background-color: #cccccc; /* Gray color for disabled state */
+  cursor: not-allowed;
+}
+
+button[type='reset'] {
+  display: block;
+  margin: 20px auto 0; /* Centers the button horizontally */
+  padding: 4px 16px; /* Adjusts the size of the button */
+  font-size: 1em; /* Sets a readable font size */
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button-container {
@@ -76,4 +116,15 @@ button[type='submit']:hover {
 .button-container .btn {
   padding: 8px 16px; /* Adjust button padding */
   font-size: 1rem; /* Set a consistent font size */
+}
+
+.form-row {
+  display: flex; /* Use Flexbox to align items in a row */
+  gap: 30px; /* Add 30px gap between dropdowns */
+  align-items: flex-start; /* Align items at the top */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Stack label and dropdown vertically */
 }

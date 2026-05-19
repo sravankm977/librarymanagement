@@ -9,13 +9,13 @@ import {
 import { combineLatest, map, Observable, startWith } from 'rxjs';
 import { Book } from '../../models/books.interface';
 import { HttpClient } from '@angular/common/http';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgForOf } from '@angular/common';
 import { BookService } from '../../services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
-  imports: [ReactiveFormsModule, AsyncPipe],
+  imports: [ReactiveFormsModule, AsyncPipe, DatePipe],
   providers: [BookService],
   templateUrl: './add-book.html',
   styleUrl: './add-book.css',
@@ -47,6 +47,7 @@ export class AddBook {
   ngOnInit() {
     this.initializeBookForm();
     this.loadBooks();
+    // this.initializeSearchForm();
   }
 
   initializeBookForm() {
