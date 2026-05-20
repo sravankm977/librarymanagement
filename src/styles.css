@@ -47,7 +47,7 @@ form {
   flex-direction: column;
   gap: 20px;
   max-width: auto;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
   background-color: whitesmoke;
   border-radius: 10px;
@@ -127,4 +127,8 @@ button[type='reset'] {
 .form-group {
   display: flex;
   flex-direction: column; /* Stack label and dropdown vertically */
+}
+
+.table {
+  margin-top: 20px;
 }

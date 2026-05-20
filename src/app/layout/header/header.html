@@ -1,11 +1,13 @@
 <header class="header">
   <div class="left-section">
-    <img src="assets/library.png" alt="library" class="logo" />
+    <img src="assets/library.png" alt="library" class="logo" (click)="goToDashboard()"/>
 
     <h1 class="title">Library Management</h1>
   </div>
 
-  <div class="right-section">
-    <button type="reset">Logout</button>
-  </div>
+  @if(isUserLoggedIn) {
+    <div class="right-section">
+      <button type="reset" (click)="logout()">Logout</button>
+    </div>
+  }
 </header>
