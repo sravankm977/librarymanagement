@@ -6,10 +6,19 @@ import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, CommonModule, DatePipe } from '@angular/common';
 import { MemberService } from '../../services/member-service';
 import { Router } from '@angular/router';
+import { TextHighlight } from '../../../../shared/directives/text-highlight.directive';
+import { FormStyleDirective } from '../../../../shared/directives/form-style-directive';
 
 @Component({
   selector: 'app-member-list',
-  imports: [ReactiveFormsModule, AsyncPipe, DatePipe, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    AsyncPipe,
+    DatePipe,
+    CommonModule,
+    TextHighlight,
+    FormStyleDirective,
+  ],
   providers: [MemberService],
   templateUrl: './member-list.html',
   styleUrl: './member-list.css',

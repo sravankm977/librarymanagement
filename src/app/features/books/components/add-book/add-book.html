@@ -5,7 +5,7 @@
 <form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
   <div class="input-container">
     <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
+      <label for="title" class="form-label" [appTextHighlight]="'red'">Title</label>
       <input type="text" class="form-control" id="title" formControlName="title" />
       @if(addBookForm.get('title')?.invalid && addBookForm.get('title')?.touched) {
       <div class="error">

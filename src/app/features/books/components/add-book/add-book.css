@@ -1,11 +1,11 @@
-form {
+/* form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   max-width: auto;
   margin: auto;
   padding: 20px;
-}
+} */
 
 .form-control {
   width: auto !important;

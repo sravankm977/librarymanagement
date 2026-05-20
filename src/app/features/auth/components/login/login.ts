@@ -71,7 +71,7 @@ export class Login {
           return;
         }
         this.loginService.saveSession(user);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/layout']);
       },
       error: (error) => {
         // Handle login error, e.g., show error message

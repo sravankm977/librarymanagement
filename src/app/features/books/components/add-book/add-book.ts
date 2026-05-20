@@ -12,10 +12,20 @@ import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe, NgForOf } from '@angular/common';
 import { BookService } from '../../services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TextHighlight } from '../../../../shared/directives/text-highlight.directive';
+import { FormInputFontDirective } from '../../../../shared/directives/form-input-font-directive';
+import { FormStyleDirective } from '../../../../shared/directives/form-style-directive';
 
 @Component({
   selector: 'app-add-book',
-  imports: [ReactiveFormsModule, AsyncPipe, DatePipe],
+  imports: [
+    ReactiveFormsModule,
+    AsyncPipe,
+    DatePipe,
+    TextHighlight,
+    FormInputFontDirective,
+    FormStyleDirective,
+  ],
   providers: [BookService],
   templateUrl: './add-book.html',
   styleUrl: './add-book.css',

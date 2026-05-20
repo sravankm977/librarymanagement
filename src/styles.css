@@ -42,7 +42,7 @@ img {
   gap: 10px; /* Space between the icon and the title */
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -51,7 +51,7 @@ form {
   padding: 20px;
   background-color: whitesmoke;
   border-radius: 10px;
-}
+} */
 
 .form-control {
   width: auto !important;
