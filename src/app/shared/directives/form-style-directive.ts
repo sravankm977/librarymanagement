@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appFormStyleDirective]',
+  selector: 'form, [appFormStyleDirective]',
+  standalone: true,
 })
 export class FormStyleDirective {
   @Input() appFormStyleDirective: string = 'whitesmoke';

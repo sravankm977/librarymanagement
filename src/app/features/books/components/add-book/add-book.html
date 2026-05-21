@@ -6,7 +6,7 @@
   <div class="input-container">
     <div class="mb-3">
       <label for="title" class="form-label" [appTextHighlight]="'red'">Title</label>
-      <input type="text" class="form-control" id="title" formControlName="title" />
+      <input type="text" class="form-control" id="title" formControlName="title" appAlphabetsOnlyDirective/>
       @if(addBookForm.get('title')?.invalid && addBookForm.get('title')?.touched) {
       <div class="error">
         @if(addBookForm.get('title')?.hasError('required')) { Title is required. }
@@ -16,7 +16,7 @@
 
     <div class="mb-3">
       <label for="author" class="form-label">Author</label>
-      <input type="text" class="form-control" id="author" formControlName="author" />
+      <input type="text" class="form-control" id="author" formControlName="author" appAlphabetsOnlyDirective/>
       @if(addBookForm.get('author')?.invalid && addBookForm.get('author')?.touched) {
       <div class="error">
         @if(addBookForm.get('author')?.hasError('required')) { Author is required. }
@@ -31,7 +31,7 @@
 
     <div class="mb-3">
       <label for="isbn" class="form-label">ISBN</label>
-      <input type="email" class="form-control" id="isbn" formControlName="isbn" />
+      <input type="text" class="form-control" id="isbn" formControlName="isbn" />
       @if(addBookForm.get('isbn')?.invalid && addBookForm.get('isbn')?.touched) {
       <div class="error">
         @if(addBookForm.get('isbn')?.hasError('required')) { ISBN is required. }
@@ -41,12 +41,12 @@
 
     <div class="mb-3">
       <label for="quantity" class="form-label">Quantity</label>
-      <input type="email" class="form-control" id="quantity" formControlName="quantity" />
+      <input type="text" class="form-control" id="quantity" formControlName="quantity" appNoAlphabetsDirective/>
     </div>
 
     <div class="mb-3">
       <label for="publishedDate" class="form-label">Published Date</label>
-      <input type="email" class="form-control" id="publishedDate" formControlName="publishedDate" />
+      <input type="text" class="form-control" id="publishedDate" formControlName="publishedDate" appNoAlphabetsDirective/>
     </div>
   </div>
 
