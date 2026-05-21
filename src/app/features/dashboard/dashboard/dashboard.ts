@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Book } from '../../books/models/books.interface';
 import { Member } from '../../members/models/member.interface';
+import { HoverZoomDirective } from '../../../shared/directives/hover-zoom-directive';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LayoutModule, RouterOutlet],
+  imports: [LayoutModule, RouterOutlet, HoverZoomDirective],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

@@ -15,6 +15,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TextHighlight } from '../../../../shared/directives/text-highlight.directive';
 import { FormInputFontDirective } from '../../../../shared/directives/form-input-font-directive';
 import { FormStyleDirective } from '../../../../shared/directives/form-style-directive';
+import { DisableIfEmptyDirective } from '../../../../shared/directives/disable-if-empty-directive';
+import { NoAlphabetsDirective } from '../../../../shared/directives/no-alphabets-directive';
+import { AlphabetsOnlyDirective } from '../../../../shared/directives/alphabets-only-directive';
 
 @Component({
   selector: 'app-add-book',
@@ -25,6 +28,9 @@ import { FormStyleDirective } from '../../../../shared/directives/form-style-dir
     TextHighlight,
     FormInputFontDirective,
     FormStyleDirective,
+    DisableIfEmptyDirective,
+    NoAlphabetsDirective,
+    AlphabetsOnlyDirective,
   ],
   providers: [BookService],
   templateUrl: './add-book.html',
