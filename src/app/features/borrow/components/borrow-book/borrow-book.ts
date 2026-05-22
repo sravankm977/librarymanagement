@@ -9,11 +9,12 @@ import { BookService } from '../../../books/services/book.service';
 import { MemberService } from '../../../members/services/member-service';
 import { Borrow } from '../../models/borrow.interface';
 import { BorrowService } from '../../services/borrow-service';
+import { TimeAgoPipe } from '../../../../shared/pipes/time-ago-pipe';
 
 @Component({
   selector: 'app-borrow-book',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule, AsyncPipe],
-  providers: [BookService, MemberService, BorrowService, AsyncPipe],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, AsyncPipe, TimeAgoPipe],
+  providers: [BookService, MemberService, BorrowService],
   templateUrl: './borrow-book.html',
   styleUrl: './borrow-book.css',
 })

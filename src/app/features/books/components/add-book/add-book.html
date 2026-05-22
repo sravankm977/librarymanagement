@@ -85,10 +85,10 @@
     <tr>
       <!-- <th scope="row">{{book.id}}</th> -->
       <td>{{ book?.title }}</td>
-      <td>{{ book?.author }}</td>
+      <td>{{ book.author | shortenText: 10}}</td>
       <td>{{ book?.category }}</td>
-      <!-- <td>{{book.isbn}}</td> -->
-      <td>{{ book?.quantity }}</td>
+      <!-- <td>{{book.isbn | phoneFormat}}</td> -->
+      <td>{{ book.quantity | availability}}</td>
       <!-- <td>{{book.publishedDate | date:'shortDate'}}</td> -->
       <td>
         <img src="assets/pencil.png" alt="edit" class="action-icon" (click)="onEditBook(book)" />

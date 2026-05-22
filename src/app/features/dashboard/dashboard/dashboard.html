@@ -4,13 +4,21 @@
 
 <div class="row">
   <div class="col-md-4 mb-4">
-    <div class="card">
+    <!-- <div class="card" appAllowDragCardDirective>
       <div class="card-body text-left">
+        <ng-content></ng-content>
         <h5 class="card-title">Books</h5>
         <p class="card-text">Total Number of Books are:</p>
         <a href="#" class="btn btn-primary">Go to Books</a>
       </div>
-    </div>
+    </div> -->
+    <app-card appAllowDragCardDirective>
+      <div card-body>
+        <h5 class-title>Books</h5>
+        <p card-text>Total Number of Books are:</p>
+        <a href="#" class="btn btn-primary">Go to Books</a>
+      </div>
+    </app-card>
   </div>
 
   <div class="col-md-4 mb-4">
