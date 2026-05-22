@@ -6,7 +6,7 @@
       "author": "Robert C. Martin",
       "category": "Programming",
       "isbn": "9780132350884",
-      "quantity": 6,
+      "quantity": 5,
       "publishedDate": "2008-08-01"
     },
     {
@@ -46,13 +46,22 @@
       "id": "elN0AKy_vRw"
     },
     {
+      "id": "elN0AKyw_jjajbjb",
       "title": "Harry Potter and the Sorcerer's Stone",
       "author": "Rowling",
       "category": "Fantasy",
       "isbn": "9780590353",
+      "quantity": "1",
+      "publishedDate": "1997-06-26"
+    },
+    {
+      "id": "QtZWX3bfyzo",
+      "title": "ffhvf",
+      "author": "cdjdjjd",
+      "category": "ndjnvdjn",
+      "isbn": "njcdjcnj",
       "quantity": "0",
-      "publishedDate": "1997-06-26",
-      "id": "elN0AKyw_jjajbjb"
+      "publishedDate": "2008-08-01"
     }
   ],
   "Members": [
@@ -111,12 +120,22 @@
       "borrowDate": "2026-05-19",
       "returnDate": "",
       "id": "CYpFHnSUWho"
+    },
+    {
+      "bookId": "yIUHsg_zw_g",
+      "bookTitle": "Clean Code",
+      "memberId": "pjjGWx_QcGc",
+      "memberName": "John Smith",
+      "borrowDate": "2026-05-22",
+      "returnDate": "",
+      "id": "9QPDsYP4aV0"
     }
   ],
   "users": [
     {
       "email": "admin@test.com",
-      "password": "123456"
+      "password": "123456",
+      "id": "rNVDOl8HIeo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

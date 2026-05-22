@@ -18,6 +18,9 @@ import { FormStyleDirective } from '../../../../shared/directives/form-style-dir
 import { DisableIfEmptyDirective } from '../../../../shared/directives/disable-if-empty-directive';
 import { NoAlphabetsDirective } from '../../../../shared/directives/no-alphabets-directive';
 import { AlphabetsOnlyDirective } from '../../../../shared/directives/alphabets-only-directive';
+import { ShortenTextPipe } from '../../../../shared/pipes/shorten-text-pipe';
+import { AvailabilityPipe } from '../../../../shared/pipes/availability-pipe';
+import { PhoneFormatPipe } from '../../../../shared/pipes/phone-format-pipe';
 
 @Component({
   selector: 'app-add-book',
@@ -31,6 +34,9 @@ import { AlphabetsOnlyDirective } from '../../../../shared/directives/alphabets-
     DisableIfEmptyDirective,
     NoAlphabetsDirective,
     AlphabetsOnlyDirective,
+    ShortenTextPipe,
+    AvailabilityPipe,
+    PhoneFormatPipe,
   ],
   providers: [BookService],
   templateUrl: './add-book.html',

@@ -109,8 +109,8 @@
             <td>{{ i + 1 }}</td>
             <td>{{ borrow.bookTitle }}</td>
             <td>{{ borrow.memberName }}</td>
-            <td>{{ borrow.borrowDate }}</td>
-            <td>{{ borrow.returnDate }}</td>
+            <td>{{borrow.borrowDate | timeAgo}}</td>
+            <td>{{ borrow.returnDate }} or {{borrow.returnDate | timeAgo}}</td>
           </tr>
         }
       </tbody>
